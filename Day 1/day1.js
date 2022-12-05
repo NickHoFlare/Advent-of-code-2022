@@ -6,7 +6,9 @@ fs.readFile('./input.txt', 'utf8', (err, data) => {
     return;
   }
   const individualTotalCaloriesList = getElfCaloriesList(data);
-  console.log(Math.max(...individualTotalCaloriesList));
+  const descendingTotalCaloriesList = individualTotalCaloriesList.sort((a,b) => b - a);
+  console.log(descendingTotalCaloriesList[0]);
+  console.log(descendingTotalCaloriesList[0] + descendingTotalCaloriesList[1] + descendingTotalCaloriesList[2]);
 });
 
 const getElfCaloriesList = data => {
